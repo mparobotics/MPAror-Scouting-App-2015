@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RoboScout.xcscheme</key>
+		<key>M-Scout 15.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B3BCD4A91A8B38C700CB2B18</key>
+		<key>B3F9F4EC1A8BE8F500053BC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3BCD4C01A8B38C700CB2B18</key>
+		<key>B3F9F5031A8BE8F500053BC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

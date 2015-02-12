@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3BCD4A91A8B38C700CB2B18"
-               BuildableName = "RoboScout.app"
-               BlueprintName = "RoboScout"
-               ReferencedContainer = "container:RoboScout.xcodeproj">
+               BlueprintIdentifier = "B3F9F4EC1A8BE8F500053BC2"
+               BuildableName = "M-Scout 15.app"
+               BlueprintName = "M-Scout 15"
+               ReferencedContainer = "container:M-Scout 15.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3BCD4C01A8B38C700CB2B18"
-               BuildableName = "RoboScoutTests.xctest"
-               BlueprintName = "RoboScoutTests"
-               ReferencedContainer = "container:RoboScout.xcodeproj">
+               BlueprintIdentifier = "B3F9F5031A8BE8F500053BC2"
+               BuildableName = "M-Scout 15Tests.xctest"
+               BlueprintName = "M-Scout 15Tests"
+               ReferencedContainer = "container:M-Scout 15.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3BCD4C01A8B38C700CB2B18"
-               BuildableName = "RoboScoutTests.xctest"
-               BlueprintName = "RoboScoutTests"
-               ReferencedContainer = "container:RoboScout.xcodeproj">
+               BlueprintIdentifier = "B3F9F5031A8BE8F500053BC2"
+               BuildableName = "M-Scout 15Tests.xctest"
+               BlueprintName = "M-Scout 15Tests"
+               ReferencedContainer = "container:M-Scout 15.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3BCD4A91A8B38C700CB2B18"
-            BuildableName = "RoboScout.app"
-            BlueprintName = "RoboScout"
-            ReferencedContainer = "container:RoboScout.xcodeproj">
+            BlueprintIdentifier = "B3F9F4EC1A8BE8F500053BC2"
+            BuildableName = "M-Scout 15.app"
+            BlueprintName = "M-Scout 15"
+            ReferencedContainer = "container:M-Scout 15.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3BCD4A91A8B38C700CB2B18"
-            BuildableName = "RoboScout.app"
-            BlueprintName = "RoboScout"
-            ReferencedContainer = "container:RoboScout.xcodeproj">
+            BlueprintIdentifier = "B3F9F4EC1A8BE8F500053BC2"
+            BuildableName = "M-Scout 15.app"
+            BlueprintName = "M-Scout 15"
+            ReferencedContainer = "container:M-Scout 15.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3BCD4A91A8B38C700CB2B18"
-            BuildableName = "RoboScout.app"
-            BlueprintName = "RoboScout"
-            ReferencedContainer = "container:RoboScout.xcodeproj">
+            BlueprintIdentifier = "B3F9F4EC1A8BE8F500053BC2"
+            BuildableName = "M-Scout 15.app"
+            BlueprintName = "M-Scout 15"
+            ReferencedContainer = "container:M-Scout 15.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

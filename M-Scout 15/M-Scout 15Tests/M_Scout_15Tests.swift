@@ -1,15 +1,15 @@
 //
-//  RoboScoutTests.swift
-//  RoboScoutTests
+//  M_Scout_15Tests.swift
+//  M-Scout 15Tests
 //
 //  Created by Brendan Boyle on 2/11/15.
-//  Copyright (c) 2015 DBZ Technology. All rights reserved.
+//  Copyright (c) 2015 FRC: Team 3926. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class RoboScoutTests: XCTestCase {
+class M_Scout_15Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
