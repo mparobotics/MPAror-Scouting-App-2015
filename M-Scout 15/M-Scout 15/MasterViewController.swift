@@ -12,8 +12,8 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     
-    var scoutingTools: NSMutableArray = ["123", "456"]
-    var teamResources: NSMutableArray = ["789", "101"]
+    var scoutingTools: NSMutableArray = ["Pit Scouting", "Match Scouting", "Team Lookup", "Alliance Visualizer", "Scouting Report"]
+    var teamResources: NSMutableArray = ["Team Communication", "2015 MPAror Robot", "Team Website"]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,11 +55,16 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 var object: NSString = "";
-                if indexPath.section == 0 {
+                
+                switch indexPath.section {
+                case 0:
                     object = scoutingTools[indexPath.row] as NSString
-                } else if indexPath.section == 1 {
+                case 1:
                     object = teamResources[indexPath.row] as NSString
+                default:
+                    return object = ""
                 }
+                
                 let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -76,12 +81,15 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
+        switch section {
+        case 0:
             return "Scouting Tools"
-        } else if section == 1 {
+        case 1:
             return "Team Resources"
+        default:
+            return ""
         }
-        return ""
+
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,14 +103,19 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        if indexPath.section == 0 {
+        
+        switch indexPath.section {
+        case 0:
             let object = scoutingTools[indexPath.row] as NSString
             cell.textLabel!.text = object.description
-            cell.imageView?.image = UIImage(named: "MPArorLogo")
-        } else if indexPath.section == 1 {
+        case 1:
             let object = teamResources[indexPath.row] as NSString
             cell.textLabel!.text = object.description
+        default:
+            cell.textLabel!.text = "Error!"
         }
+        
+        cell.imageView?.image = UIImage(named: cell.textLabel!.text!+" Icon")
         
         return cell
     }

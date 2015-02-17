@@ -10,9 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
+    var segueTo: NSString = ""
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -23,16 +22,23 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
+            segueTo = detail.description;
         }
+        
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (segueTo != "") {
+            self.performSegueWithIdentifier(segueTo, sender: self)
+            segueTo = ""
+        }
     }
 
     override func didReceiveMemoryWarning() {

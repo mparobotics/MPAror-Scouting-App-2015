@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */; };
 		B3F9F4F31A8BE8F500053BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */; };
 		B3F9F4F51A8BE8F500053BC2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F41A8BE8F500053BC2 /* MasterViewController.swift */; };
 		B3F9F4F71A8BE8F500053BC2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F61A8BE8F500053BC2 /* DetailViewController.swift */; };
 		B3F9F4FA1A8BE8F500053BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4F81A8BE8F500053BC2 /* Main.storyboard */; };
-		B3F9F4FC1A8BE8F500053BC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */; };
 		B3F9F4FF1A8BE8F500053BC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FD1A8BE8F500053BC2 /* LaunchScreen.xib */; };
 		B3F9F50B1A8BE8F500053BC2 /* M_Scout_15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F50A1A8BE8F500053BC2 /* M_Scout_15Tests.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +38,7 @@
 		B3F9F5041A8BE8F500053BC2 /* M-Scout 15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "M-Scout 15Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F9F5091A8BE8F500053BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F9F50A1A8BE8F500053BC2 /* M_Scout_15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_Scout_15Tests.swift; sourceTree = "<group>"; };
+		B3FB11A31A8ECAAF001C4B43 /* M-Scout 15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "M-Scout 15.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		B3F9F4EF1A8BE8F500053BC2 /* M-Scout 15 */ = {
 			isa = PBXGroup;
 			children = (
+				B3FB11A31A8ECAAF001C4B43 /* M-Scout 15.entitlements */,
 				B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */,
 				B3F9F4F41A8BE8F500053BC2 /* MasterViewController.swift */,
 				B3F9F4F61A8BE8F500053BC2 /* DetailViewController.swift */,
@@ -169,6 +171,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
 						};
 					};
 					B3F9F5031A8BE8F500053BC2 = {
@@ -201,9 +206,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */,
 				B3F9F4FA1A8BE8F500053BC2 /* Main.storyboard in Resources */,
 				B3F9F4FF1A8BE8F500053BC2 /* LaunchScreen.xib in Resources */,
-				B3F9F4FC1A8BE8F500053BC2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,11 +353,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "M-Scout 15/M-Scout 15.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "M-Scout 15/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -360,11 +369,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "M-Scout 15/M-Scout 15.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "M-Scout 15/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
