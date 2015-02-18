@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32440801A93FC2B00A3F32C /* M-Scout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324407F1A93FC2B00A3F32C /* M-Scout.swift */; };
+		B32440821A94019400A3F32C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32440811A94019400A3F32C /* Team.swift */; };
 		B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */; };
+		B3EE80131A93338A00E5B293 /* PitScouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EE80121A93338A00E5B293 /* PitScouting.swift */; };
 		B3F9F4F31A8BE8F500053BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */; };
 		B3F9F4F51A8BE8F500053BC2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F41A8BE8F500053BC2 /* MasterViewController.swift */; };
 		B3F9F4F71A8BE8F500053BC2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F61A8BE8F500053BC2 /* DetailViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B324407F1A93FC2B00A3F32C /* M-Scout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "M-Scout.swift"; sourceTree = "<group>"; };
+		B32440811A94019400A3F32C /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		B3EE80121A93338A00E5B293 /* PitScouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitScouting.swift; sourceTree = "<group>"; };
 		B3F9F4ED1A8BE8F500053BC2 /* M-Scout 15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M-Scout 15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F9F4F11A8BE8F500053BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3EE80111A93335300E5B293 /* Panel View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE80121A93338A00E5B293 /* PitScouting.swift */,
+			);
+			name = "Panel View Controllers";
+			sourceTree = "<group>";
+		};
 		B3F9F4E41A8BE8F500053BC2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +96,11 @@
 			children = (
 				B3FB11A31A8ECAAF001C4B43 /* M-Scout 15.entitlements */,
 				B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */,
+				B3EE80111A93335300E5B293 /* Panel View Controllers */,
 				B3F9F4F41A8BE8F500053BC2 /* MasterViewController.swift */,
 				B3F9F4F61A8BE8F500053BC2 /* DetailViewController.swift */,
+				B324407F1A93FC2B00A3F32C /* M-Scout.swift */,
+				B32440811A94019400A3F32C /* Team.swift */,
 				B3F9F4F81A8BE8F500053BC2 /* Main.storyboard */,
 				B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */,
 				B3F9F4FD1A8BE8F500053BC2 /* LaunchScreen.xib */,
@@ -226,8 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32440821A94019400A3F32C /* Team.swift in Sources */,
 				B3F9F4F71A8BE8F500053BC2 /* DetailViewController.swift in Sources */,
+				B3EE80131A93338A00E5B293 /* PitScouting.swift in Sources */,
 				B3F9F4F51A8BE8F500053BC2 /* MasterViewController.swift in Sources */,
+				B32440801A93FC2B00A3F32C /* M-Scout.swift in Sources */,
 				B3F9F4F31A8BE8F500053BC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
