@@ -26,7 +26,7 @@ class M_Scout: NSObject {
         static func printTeams() {
             for team in M_Scout.teams.teamList {
                 let currentTeam = team as Team
-                println(currentTeam.teamNumber);
+                currentTeam.diag()
             }
         }
     }

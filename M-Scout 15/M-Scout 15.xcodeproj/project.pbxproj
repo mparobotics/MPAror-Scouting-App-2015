@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B32440801A93FC2B00A3F32C /* M-Scout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324407F1A93FC2B00A3F32C /* M-Scout.swift */; };
 		B32440821A94019400A3F32C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32440811A94019400A3F32C /* Team.swift */; };
+		B34EE9EA1A955B1E0024BAEA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34EE9E91A955B1E0024BAEA /* SwiftyJSON.swift */; };
+		B34EE9EE1A955CBA0024BAEA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34EE9ED1A955CBA0024BAEA /* File.swift */; };
 		B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */; };
 		B3EE80131A93338A00E5B293 /* PitScouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EE80121A93338A00E5B293 /* PitScouting.swift */; };
 		B3F9F4F31A8BE8F500053BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		B324407F1A93FC2B00A3F32C /* M-Scout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "M-Scout.swift"; sourceTree = "<group>"; };
 		B32440811A94019400A3F32C /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		B34EE9E91A955B1E0024BAEA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B34EE9ED1A955CBA0024BAEA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B3EE80121A93338A00E5B293 /* PitScouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitScouting.swift; sourceTree = "<group>"; };
 		B3F9F4ED1A8BE8F500053BC2 /* M-Scout 15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M-Scout 15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F9F4F11A8BE8F500053BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				B3F9F4F61A8BE8F500053BC2 /* DetailViewController.swift */,
 				B324407F1A93FC2B00A3F32C /* M-Scout.swift */,
 				B32440811A94019400A3F32C /* Team.swift */,
+				B34EE9ED1A955CBA0024BAEA /* File.swift */,
+				B34EE9E91A955B1E0024BAEA /* SwiftyJSON.swift */,
 				B3F9F4F81A8BE8F500053BC2 /* Main.storyboard */,
 				B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */,
 				B3F9F4FD1A8BE8F500053BC2 /* LaunchScreen.xib */,
@@ -248,6 +254,8 @@
 				B3EE80131A93338A00E5B293 /* PitScouting.swift in Sources */,
 				B3F9F4F51A8BE8F500053BC2 /* MasterViewController.swift in Sources */,
 				B32440801A93FC2B00A3F32C /* M-Scout.swift in Sources */,
+				B34EE9EE1A955CBA0024BAEA /* File.swift in Sources */,
+				B34EE9EA1A955B1E0024BAEA /* SwiftyJSON.swift in Sources */,
 				B3F9F4F31A8BE8F500053BC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +390,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -398,6 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

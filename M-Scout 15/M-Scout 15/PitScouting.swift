@@ -48,9 +48,7 @@ class PitScouting: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        M_Scout.teams.printTeams();
+        // Do any additional setup after loading the view.\
     }
 
     override func didReceiveMemoryWarning() {
