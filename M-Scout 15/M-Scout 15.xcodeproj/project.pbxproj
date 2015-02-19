@@ -19,6 +19,7 @@
 		B3F9F4FA1A8BE8F500053BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4F81A8BE8F500053BC2 /* Main.storyboard */; };
 		B3F9F4FF1A8BE8F500053BC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FD1A8BE8F500053BC2 /* LaunchScreen.xib */; };
 		B3F9F50B1A8BE8F500053BC2 /* M_Scout_15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F50A1A8BE8F500053BC2 /* M_Scout_15Tests.swift */; };
+		DDFBBDFD1A96277900B831E2 /* MPAROR Robotics.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFBBDFC1A96277900B831E2 /* MPAROR Robotics.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B3F9F5091A8BE8F500053BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F9F50A1A8BE8F500053BC2 /* M_Scout_15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_Scout_15Tests.swift; sourceTree = "<group>"; };
 		B3FB11A31A8ECAAF001C4B43 /* M-Scout 15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "M-Scout 15.entitlements"; sourceTree = "<group>"; };
+		DDFBBDFC1A96277900B831E2 /* MPAROR Robotics.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MPAROR Robotics.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		B3F9F4EF1A8BE8F500053BC2 /* M-Scout 15 */ = {
 			isa = PBXGroup;
 			children = (
+				DDFBBDFC1A96277900B831E2 /* MPAROR Robotics.jpg */,
 				B3FB11A31A8ECAAF001C4B43 /* M-Scout 15.entitlements */,
 				B3F9F4F21A8BE8F500053BC2 /* AppDelegate.swift */,
 				B3EE80111A93335300E5B293 /* Panel View Controllers */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFBBDFD1A96277900B831E2 /* MPAROR Robotics.jpg in Resources */,
 				B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */,
 				B3F9F4FA1A8BE8F500053BC2 /* Main.storyboard in Resources */,
 				B3F9F4FF1A8BE8F500053BC2 /* LaunchScreen.xib in Resources */,
