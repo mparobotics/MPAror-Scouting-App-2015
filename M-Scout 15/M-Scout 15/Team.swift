@@ -50,11 +50,10 @@ class Team: NSObject {
         filePath = "/\(teamNumber).json";
         
         if (File.exists(filePath)) {
-            //let json = JSON(File.read(filePath, encoding: NSASCIIStringEncoding)!)
-            let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamComments": teamComments])
-            //println(json.description)
             
-            //println(json[0][0][0].dictionaryValue)
+            let json = JSON(JSONParseDictionary(File.read(filePath)!))
+            
+            //println(json.description)
             
             teamNumber = json["teamNumber"].intValue
             teamName = json["teamName"].stringValue
@@ -109,6 +108,10 @@ class Team: NSObject {
     }
     
     func diag() {
+        
+        //let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamComments": teamComments])
+        
+        
         //File.write("/1234.json", content: "HelloWorld", encoding: NSASCIIStringEncoding)
         
         //save();

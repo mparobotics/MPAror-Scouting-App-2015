@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "M-Scout 15/DetailViewController.swift"
-            timestampString = "446019095.901142"
+            filePath = "M-Scout 15/Team.swift"
+            timestampString = "446103874.611015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "diag()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

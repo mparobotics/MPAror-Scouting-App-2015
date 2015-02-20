@@ -1171,6 +1171,15 @@ public func >=(lhs: NSNumber, rhs: NSNumber) -> Bool {
     }
 }
 
+public func JSONParseDictionary(jsonString: String) -> [String: AnyObject] {
+    if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
+        if let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)  as? [String: AnyObject] {
+            return dictionary
+        }
+    }
+    return [String: AnyObject]()
+}
+
 //MARK:- Unavailable
 
 @availability(*, unavailable, renamed="JSON")
