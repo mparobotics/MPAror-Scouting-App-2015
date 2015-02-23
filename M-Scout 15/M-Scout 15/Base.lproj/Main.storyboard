@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1581,40 +1581,6 @@
             </objects>
             <point key="canvasLocation" x="-38.25" y="129"/>
         </scene>
-        <!--Team Lookup-->
-        <scene sceneID="YQH-E7-rMU">
-            <objects>
-                <viewController title="Team Lookup" id="mVy-Pe-ycy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gaN-Sa-Eyy"/>
-                        <viewControllerLayoutGuide type="bottom" id="mO9-XL-Hea"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5bL-cW-lD4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vhE-Bm-hWM">
-                                <rect key="frame" x="239" y="286" width="123" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Lookup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-Aj-HeW">
-                                <rect key="frame" x="279" y="89" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Team Lookup" id="wtA-34-uhD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S5y-xs-Pcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2560.5" y="94.5"/>
-        </scene>
         <!--Scouting Report-->
         <scene sceneID="Low-Oo-mUO">
             <objects>
@@ -1872,7 +1838,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mVy-Pe-ycy" kind="relationship" relationship="rootViewController" id="Cxq-1d-nB4"/>
+                        <segue destination="6ft-L4-aM5" kind="relationship" relationship="rootViewController" id="PGW-Jc-RWl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWY-s6-HyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1932,6 +1898,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi2-Hp-EeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1317.75" y="988.5"/>
+        </scene>
+        <!--Team Lookup-->
+        <scene sceneID="i0I-2u-vwB">
+            <objects>
+                <tableViewController id="6ft-L4-aM5" customClass="TeamLookup" customModule="M_Scout_15" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wd6-bd-XZS">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="GAI-Gy-apx">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="6ft-L4-aM5" id="MBJ-u5-nvp"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="iTZ-JQ-dQd">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iTZ-JQ-dQd" id="t1s-f0-aPq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6ft-L4-aM5" id="ElL-Nu-A8u"/>
+                            <outlet property="delegate" destination="6ft-L4-aM5" id="Pza-fm-6UL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Team Lookup" id="SB8-5m-FbQ"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Qfv-mb-k1r" id="Qwv-Wo-nGr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aT-oo-nS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Qfv-mb-k1r">
+                    <connections>
+                        <outlet property="delegate" destination="6ft-L4-aM5" id="IX6-Mq-Iqt"/>
+                        <outlet property="searchBar" destination="GAI-Gy-apx" id="vFf-wV-1bj"/>
+                        <outlet property="searchContentsController" destination="6ft-L4-aM5" id="Cji-mS-m0A"/>
+                        <outlet property="searchResultsDataSource" destination="6ft-L4-aM5" id="kNN-pM-qW4"/>
+                        <outlet property="searchResultsDelegate" destination="6ft-L4-aM5" id="HWr-WF-w2M"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2560.5" y="94.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nnh-tC-h1y">
