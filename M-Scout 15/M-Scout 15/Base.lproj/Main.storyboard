@@ -1720,7 +1720,7 @@
         <!--Team Website-->
         <scene sceneID="TCx-nN-FsQ">
             <objects>
-                <viewController title="Team Website" id="4bY-Me-h0b" customClass="TeamWebsite" customModule="M_Scout_15" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Team Website" id="4bY-Me-h0b" customClass="TeamWebsite" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E9R-ZT-jwe"/>
                         <viewControllerLayoutGuide type="bottom" id="zmk-6L-SoA"/>
@@ -1731,9 +1731,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team Website" id="psh-VS-iDI"/>
-                    <connections>
-                        <outlet property="containerView" destination="IBQ-AS-kpX" id="z3Z-0z-Ti7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff4-8y-adG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1904,10 +1901,11 @@
             <objects>
                 <tableViewController id="6ft-L4-aM5" customClass="TeamLookup" customModule="M_Scout_15" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wd6-bd-XZS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="GAI-Gy-apx">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
