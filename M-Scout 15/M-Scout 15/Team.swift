@@ -12,6 +12,8 @@ class Team: NSObject {
     var teamNumber: Int = 0
     var teamName: NSString = ""
     
+    var robotImage:UIImage = UIImage(named: "M-Scout")!
+    
     var hasAuto: Bool = false
     var hasTotes: Bool = false
     var hasContainers: Bool = false
@@ -41,6 +43,7 @@ class Team: NSObject {
     var teamNotes:NSString = ""
     
     var filePath:NSString = ""
+    var imagePath:NSString = ""
     
     var teamExists: Bool = false;
     
@@ -48,9 +51,8 @@ class Team: NSObject {
         
         teamNumber = number;
         
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
-        
-        filePath = documentsPath+"/\(teamNumber).json";
+        filePath = "\(teamNumber).json"
+        imagePath = "\(teamNumber).png"
         
         if (File.exists(filePath)) {
             
@@ -60,6 +62,13 @@ class Team: NSObject {
             
             teamNumber = json["teamNumber"].intValue
             teamName = json["teamName"].stringValue
+            
+            if (File.exists("\(teamNumber).png")) {
+                println("Image Exists")
+                robotImage = File.readImage(imagePath)!
+            } else {
+                NSLog("No image at %@", imagePath)
+            }
             
             hasAuto = json["hasAuto"].boolValue
             hasTotes = json["hasTotes"].boolValue

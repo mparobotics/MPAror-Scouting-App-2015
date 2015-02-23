@@ -86,7 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-ce-4FY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-ce-4FY">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="dye-gI-wA6"/>
@@ -108,7 +108,7 @@
                                     <action selector="saveNotes:" destination="D4V-vR-8z1" eventType="touchUpInside" id="4GY-eI-uGb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Y3y-fI-I8t">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Y3y-fI-I8t">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -127,7 +127,6 @@
                             <constraint firstItem="0VD-ce-4FY" firstAttribute="top" secondItem="Y3y-fI-I8t" secondAttribute="bottom" constant="8" symbolic="YES" id="e8I-E3-2R7"/>
                             <constraint firstItem="Y3y-fI-I8t" firstAttribute="leading" secondItem="3GI-Bw-VE7" secondAttribute="leadingMargin" id="snh-Xm-5Pu"/>
                         </constraints>
-                        <variation key="heightClass=regular-widthClass=regular"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team Notes" id="Uia-OB-Nrk">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="qM2-Qy-AZ2">
@@ -216,22 +215,28 @@
                                     <segment title="Swerve"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qpQ-Hg-qII">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="M-Scout" translatesAutoresizingMaskIntoConstraints="NO" id="qpQ-Hg-qII">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.009270870451" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="OKu-cD-hV6"/>
+                                    <constraint firstAttribute="height" constant="212" id="UiB-jq-klf"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="OKu-cD-hV6"/>
+                                        <exclude reference="UiB-jq-klf"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="OKu-cD-hV6"/>
+                                        <include reference="UiB-jq-klf"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VNa-Jr-S3L" appends="YES" id="QlW-XM-avf"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-CS-4tE">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -1480,6 +1485,7 @@
                         <outlet property="hasTotes" destination="Nfh-aj-FNs" id="k3m-lV-oRg"/>
                         <outlet property="litterStack" destination="d4c-HL-cO2" id="CiB-OM-DSp"/>
                         <outlet property="litterStackControl" destination="5dE-k9-Dkz" id="eO0-ci-WMw"/>
+                        <outlet property="robotImage" destination="qpQ-Hg-qII" id="cYd-VW-FIs"/>
                         <outlet property="saveTeam" destination="DXB-CZ-Ldg" id="d8y-Ku-oMh"/>
                         <outlet property="teamName" destination="11O-H4-h6E" id="wvc-gP-tsL"/>
                         <outlet property="teamNotes" destination="H8g-0F-JlW" id="D72-DU-WGJ"/>
@@ -1490,9 +1496,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecl-Do-pfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Dgb-2I-IEK">
+                <tapGestureRecognizer id="Dgb-2I-IEK" userLabel="Keyboard Dismiss">
                     <connections>
-                        <action selector="tapOutsideTextview:" destination="gUU-6t-fx7" id="7te-eW-caW"/>
+                        <action selector="tapOutsideTextview:" destination="gUU-6t-fx7" id="wp9-T7-jE9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="VNa-Jr-S3L" userLabel="Capture Image">
+                    <connections>
+                        <action selector="captureImage:" destination="gUU-6t-fx7" id="VtU-85-4lH"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1972,6 +1983,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="M-Scout" width="512" height="512"/>
         <image name="MPArorLogoNoBackground" width="3000" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>

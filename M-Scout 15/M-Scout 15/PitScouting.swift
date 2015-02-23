@@ -8,11 +8,12 @@
 
 import UIKit
 
-class PitScouting: UIViewController {
-
+class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet var teamNumber: UITextField!
     @IBOutlet var teamName: UITextField!
+    
+    @IBOutlet var robotImage: UIImageView!
     
     @IBOutlet var hasAuto: UISegmentedControl!
     @IBOutlet var hasTotes: UISegmentedControl!
@@ -47,6 +48,8 @@ class PitScouting: UIViewController {
     @IBOutlet var teamNotes: UIButton!
     @IBOutlet var saveTeam: UIButton!
     
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,6 +67,9 @@ class PitScouting: UIViewController {
     func resetView() {
         teamName.text = ""
         teamNumber.text = ""
+        
+        robotImage.userInteractionEnabled = false
+        robotImage.image = UIImage(named: "M-Scout")
         
         hasAuto.selectedSegmentIndex = -1
         hasTotes.selectedSegmentIndex = -1
@@ -106,6 +112,8 @@ class PitScouting: UIViewController {
         var currentTeam:Team = Team(number: teamNumber.text.toInt()!)
         if (currentTeam.teamExists) {
             teamName.text = currentTeam.teamName
+            
+            robotImage.image = currentTeam.robotImage
             
             if (currentTeam.hasAuto) {
                 hasAuto.selectedSegmentIndex = 0
@@ -165,6 +173,7 @@ class PitScouting: UIViewController {
             hasContainers.enabled = true
             driveStyle.enabled = true
             teamRating.enabled = true
+            robotImage.userInteractionEnabled = true
             
             teamNotes.enabled = true
             saveTeam.enabled = true
@@ -319,6 +328,31 @@ class PitScouting: UIViewController {
         currentTeam.save()
         resetView()
     }
+    
+    @IBAction func captureImage(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            println("Button capture")
+            
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+        
+        robotImage.image = image
+        
+        File.writeImage("\(teamNumber.text).png", content: image)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
