@@ -60,20 +60,111 @@ class PitScouting: UIViewController {
     func resetView() {
         teamName.text = ""
         teamNumber.text = ""
+        
         hasAuto.selectedSegmentIndex = -1
         hasTotes.selectedSegmentIndex = -1
         hasLitter.selectedSegmentIndex = -1
         hasContainers.selectedSegmentIndex = -1
         driveStyle.selectedSegmentIndex = -1
         teamRating.selectedSegmentIndex = -1
+        
+        teamName.enabled = false
+        hasAuto.enabled = false
+        hasTotes.enabled = false
+        hasLitter.enabled = false
+        hasContainers.enabled = false
+        driveStyle.enabled = false
+        teamRating.enabled = false
+        
         autoStackControl.value = 0
         totesStackControl.value = 0
         litterStackControl.value = 0
         containersStackControl.value = 0
+        
+        canYellowBins.on = false
+        canZoneChange.on = false
+        canVisionTrack.on = false
+        canUpright.on = false
+        canInverted.on = false
+        canFlip.on = false
+        canLandfill.on = false
+        canContainer.on = false
+        canGround.on = false
+        
         updateScoringCategories(self)
         updateStackLevels(self)
     }
+    
+    func loadTeam() {
+        var currentTeam:Team = Team(number: teamNumber.text.toInt()!)
+        if (currentTeam.teamExists) {
+            teamName.text = currentTeam.teamName
+            
+            if (currentTeam.hasAuto) {
+                hasAuto.selectedSegmentIndex = 0
+            } else {
+                hasAuto.selectedSegmentIndex = 1
+            }
+            
+            if (currentTeam.hasTotes) {
+                hasTotes.selectedSegmentIndex = 0
+            } else {
+                hasTotes.selectedSegmentIndex = 1
+            }
+            
+            if (currentTeam.hasContainers) {
+                hasContainers.selectedSegmentIndex = 0
+            } else {
+                hasContainers.selectedSegmentIndex = 1
+            }
+            
+            if (currentTeam.hasLitter) {
+                hasLitter.selectedSegmentIndex = 0
+            } else {
+                hasLitter.selectedSegmentIndex = 1
+            }
+            
+            driveStyle.selectedSegmentIndex = currentTeam.driveStyle
+            
+            autoStackControl.value = Double(currentTeam.autoStack)
+            canYellowBins.on = currentTeam.canYellowBins
+            canZoneChange.on = currentTeam.canZoneChange
+            canVisionTrack.on = currentTeam.canVisionTrack
+            
+            totesStackControl.value = Double(currentTeam.totesStack)
+            canUpright.on = currentTeam.canUpright
+            canInverted.on = currentTeam.canInverted
+            canFlip.on = currentTeam.canFlip
+            
+            litterStackControl.value = Double(currentTeam.litterStack)
+            canLandfill.on = currentTeam.canLandfill
+            canContainer.on = currentTeam.canContainer
+            canGround.on = currentTeam.canGround
+            
+            containersStackControl.value = Double(currentTeam.containersStack)
+            
+            teamRating.selectedSegmentIndex = currentTeam.teamRating
+            
+            updateScoringCategories(self)
+        }
+    }
 
+    @IBAction func teamNumberEntered(sender: AnyObject) {
+        if (teamNumber.text.toInt() > 0) {
+            teamName.enabled = true
+            hasAuto.enabled = true
+            hasTotes.enabled = true
+            hasLitter.enabled = true
+            hasContainers.enabled = true
+            driveStyle.enabled = true
+            teamRating.enabled = true
+            
+            loadTeam()
+        } else {
+            resetView()
+        }
+    }
+    
     @IBAction func updateScoringCategories(sender: AnyObject) {
         if (hasAuto.selectedSegmentIndex == 0) {
             //Enable category
@@ -89,6 +180,11 @@ class PitScouting: UIViewController {
             canYellowBins.enabled = false
             canZoneChange.enabled = false
             canVisionTrack.enabled = false
+            
+            autoStackControl.value = 0
+            canYellowBins.on = false
+            canZoneChange.on = false
+            canVisionTrack.on = false
         }
         
         if (hasTotes.selectedSegmentIndex == 0) {
@@ -105,6 +201,11 @@ class PitScouting: UIViewController {
             canUpright.enabled = false
             canInverted.enabled = false
             canFlip.enabled = false
+            
+            totesStackControl.value = 0
+            canUpright.on = false
+            canInverted.on = false
+            canFlip.on = false
         }
         
         if (hasLitter.selectedSegmentIndex == 0) {
@@ -121,6 +222,11 @@ class PitScouting: UIViewController {
             canLandfill.enabled = false
             canContainer.enabled = false
             canGround.enabled = false
+            
+            litterStackControl.value = 0
+            canLandfill.on = false
+            canContainer.on = false
+            canGround.on = false
         }
         
         if (hasContainers.selectedSegmentIndex == 0) {
@@ -131,7 +237,11 @@ class PitScouting: UIViewController {
             //Disable category
             containersStackControl.enabled = false
             containersStack.enabled = false
+            
+            containersStackControl.value = 0
         }
+        
+        updateStackLevels(self)
     }
     
     @IBAction func updateStackLevels(sender: AnyObject) {
@@ -147,6 +257,56 @@ class PitScouting: UIViewController {
     }
     
     @IBAction func saveTeam(sender: AnyObject) {
+        var currentTeam:Team = Team(number: teamNumber.text.toInt()!)
+        
+        currentTeam.teamName = teamName.text
+        
+        if (hasAuto.selectedSegmentIndex == 0) {
+            currentTeam.hasAuto = true
+        } else {
+            currentTeam.hasAuto = false
+        }
+        
+        if (hasTotes.selectedSegmentIndex == 0) {
+            currentTeam.hasTotes = true
+        } else {
+            currentTeam.hasTotes = false
+        }
+        
+        if (hasContainers.selectedSegmentIndex == 0) {
+            currentTeam.hasContainers = true
+        } else {
+            currentTeam.hasContainers = false
+        }
+        
+        if (hasLitter.selectedSegmentIndex == 0) {
+            currentTeam.hasLitter = true
+        } else {
+            currentTeam.hasLitter = false
+        }
+        
+        currentTeam.driveStyle = driveStyle.selectedSegmentIndex
+        
+        currentTeam.autoStack = Int(autoStackControl.value)
+        currentTeam.canYellowBins = canYellowBins.on
+        currentTeam.canZoneChange = canZoneChange.on
+        currentTeam.canVisionTrack = canVisionTrack.on
+        
+        currentTeam.totesStack = Int(totesStackControl.value)
+        currentTeam.canUpright = canUpright.on
+        currentTeam.canInverted = canInverted.on
+        currentTeam.canFlip = canFlip.on
+        
+        currentTeam.litterStack = Int(litterStackControl.value)
+        currentTeam.canLandfill = canLandfill.on
+        currentTeam.canContainer = canContainer.on
+        currentTeam.canGround = canGround.on
+        
+        currentTeam.containersStack = Int(containersStackControl.value)
+        
+        currentTeam.teamRating = teamRating.selectedSegmentIndex
+        
+        currentTeam.save()
         resetView()
     }
     /*

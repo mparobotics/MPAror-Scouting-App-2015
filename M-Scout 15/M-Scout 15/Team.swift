@@ -47,7 +47,10 @@ class Team: NSObject {
     init(number: Int = 0) {
         
         teamNumber = number;
-        filePath = "/\(teamNumber).json";
+        
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        
+        filePath = documentsPath+"/\(teamNumber).json";
         
         if (File.exists(filePath)) {
             
@@ -96,15 +99,11 @@ class Team: NSObject {
     }
     
     func save() {
-        println("Saving...")
+        NSLog("Saving team %d...", teamNumber)
+        //File.remove(filePath)
         let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamComments": teamComments])
         File.write(filePath, content: json.description, encoding: NSASCIIStringEncoding)
         
-    }
-    
-    func create(data: NSMutableArray) {
-        let json = JSON(data)
-        File.write(filePath, content: json.description, encoding: NSASCIIStringEncoding)
     }
     
     func diag() {
@@ -114,5 +113,6 @@ class Team: NSObject {
         //File.remove(filePath)
         
         NSLog("Team Number: %d", teamNumber)
+        
     }
 }

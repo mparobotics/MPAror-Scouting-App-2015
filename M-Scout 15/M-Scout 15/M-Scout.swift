@@ -14,19 +14,29 @@ class M_Scout: NSObject {
     struct teams {
         static var teamList = M_Scout.teams.getTeams();
         
-        static func getTeams() -> NSMutableArray {
+        static func getTeams() -> NSArray {
             
-            let team1:Team = Team(number: 1234)
-            let team2:Team = Team(number: 2345)
-            let team3:Team = Team(number: 3456)
+            var teams: [Team] = []
             
-            return [team1, team2, team3] as NSMutableArray
+            let fileManager = NSFileManager.defaultManager()
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+            let enumerator:NSDirectoryEnumerator = fileManager.enumeratorAtPath(documentsPath)!
+            
+            while let element = enumerator.nextObject() as? String {
+                if element.hasSuffix("json") { // checks the extension
+                    var fileNameArr = split(element) {$0 == "."}
+                    var teamNumber: String = fileNameArr[0]
+                    teams.append(Team(number: teamNumber.toInt()!))
+                }
+            }
+            
+            return teams
         }
         
         static func printTeams() {
             for team in M_Scout.teams.teamList {
                 let currentTeam = team as Team
-                currentTeam.diag()
+                //currentTeam.diag()
             }
         }
     }
