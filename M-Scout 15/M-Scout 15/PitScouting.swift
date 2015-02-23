@@ -44,11 +44,15 @@ class PitScouting: UIViewController {
     
     @IBOutlet var teamRating: UISegmentedControl!
     
+    @IBOutlet var teamNotes: UIButton!
+    @IBOutlet var saveTeam: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        teamNumber.becomeFirstResponder()
         
     }
 
@@ -90,6 +94,9 @@ class PitScouting: UIViewController {
         canLandfill.on = false
         canContainer.on = false
         canGround.on = false
+        
+        teamNotes.enabled = false
+        saveTeam.enabled = false
         
         updateScoringCategories(self)
         updateStackLevels(self)
@@ -158,6 +165,9 @@ class PitScouting: UIViewController {
             hasContainers.enabled = true
             driveStyle.enabled = true
             teamRating.enabled = true
+            
+            teamNotes.enabled = true
+            saveTeam.enabled = true
             
             loadTeam()
         } else {
@@ -318,5 +328,12 @@ class PitScouting: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "teamNotes" {
+            let controller = (segue.destinationViewController as UINavigationController).topViewController as TeamNotes
+            controller.teamNumber = teamNumber.text.toInt()!
+        }
+    }
 
 }

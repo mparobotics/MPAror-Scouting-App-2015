@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
-        <!--View Controller-->
+        <!--Team Notes-->
         <scene sceneID="ecK-P8-OxN">
             <objects>
-                <viewController id="D4V-vR-8z1" sceneMemberID="viewController">
+                <viewController id="D4V-vR-8z1" customClass="TeamNotes" customModule="M_Scout_15" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cvU-JV-8Eb"/>
                         <viewControllerLayoutGuide type="bottom" id="UnW-Ly-b0E"/>
@@ -85,13 +85,62 @@
                     <view key="view" contentMode="scaleToFill" id="3GI-Bw-VE7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-ce-4FY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="dye-gI-wA6"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dye-gI-wA6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="dye-gI-wA6"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="saveNotes:" destination="D4V-vR-8z1" eventType="touchUpInside" id="4GY-eI-uGb"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Y3y-fI-I8t">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.009270870451" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y3y-fI-I8t" firstAttribute="centerX" secondItem="0VD-ce-4FY" secondAttribute="centerX" id="AG1-sP-m4c"/>
+                            <constraint firstAttribute="bottom" secondItem="0VD-ce-4FY" secondAttribute="bottom" constant="20" symbolic="YES" id="TW6-ib-dxf"/>
+                            <constraint firstAttribute="bottom" secondItem="0VD-ce-4FY" secondAttribute="bottom" constant="20" symbolic="YES" id="VsX-7f-ln1"/>
+                            <constraint firstItem="Y3y-fI-I8t" firstAttribute="trailing" secondItem="3GI-Bw-VE7" secondAttribute="trailingMargin" id="cmS-95-VWa"/>
+                            <constraint firstItem="Y3y-fI-I8t" firstAttribute="top" secondItem="cvU-JV-8Eb" secondAttribute="bottom" constant="8" symbolic="YES" id="dVF-T6-tAz"/>
+                            <constraint firstItem="0VD-ce-4FY" firstAttribute="top" secondItem="Y3y-fI-I8t" secondAttribute="bottom" constant="8" symbolic="YES" id="e8I-E3-2R7"/>
+                            <constraint firstItem="Y3y-fI-I8t" firstAttribute="leading" secondItem="3GI-Bw-VE7" secondAttribute="leadingMargin" id="snh-Xm-5Pu"/>
+                        </constraints>
+                        <variation key="heightClass=regular-widthClass=regular"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Uia-OB-Nrk">
+                    <navigationItem key="navigationItem" title="Team Notes" id="Uia-OB-Nrk">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="qM2-Qy-AZ2">
                             <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" red="1" green="0.0" blue="0.009270870451" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="closeWindow:" destination="D4V-vR-8z1" id="Bz7-Bj-ihM"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="teamNotes" destination="Y3y-fI-I8t" id="a94-84-0wo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22K-Eq-0fA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,7 +218,7 @@
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qpQ-Hg-qII">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.70196078429999997" green="0.0078431372550000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.009270870451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="OKu-cD-hV6"/>
                                 </constraints>
@@ -719,7 +768,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-0F-JlW">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-0F-JlW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9np-g0-8Up"/>
@@ -743,7 +792,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="add-Vg-b7B" kind="presentation" modalPresentationStyle="formSheet" id="Sug-M4-u88"/>
+                                    <segue destination="add-Vg-b7B" kind="presentation" identifier="teamNotes" modalPresentationStyle="formSheet" id="Sug-M4-u88"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yellow Bins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHq-Dv-Kcu">
@@ -794,7 +843,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-CZ-Ldg">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-CZ-Ldg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="541-pM-iS0"/>
@@ -862,6 +911,7 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.009270870451" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="N8c-24-rBy" firstAttribute="top" secondItem="e5x-ar-kw0" secondAttribute="bottom" constant="1" id="0km-tm-EhW"/>
@@ -1430,7 +1480,9 @@
                         <outlet property="hasTotes" destination="Nfh-aj-FNs" id="k3m-lV-oRg"/>
                         <outlet property="litterStack" destination="d4c-HL-cO2" id="CiB-OM-DSp"/>
                         <outlet property="litterStackControl" destination="5dE-k9-Dkz" id="eO0-ci-WMw"/>
+                        <outlet property="saveTeam" destination="DXB-CZ-Ldg" id="d8y-Ku-oMh"/>
                         <outlet property="teamName" destination="11O-H4-h6E" id="wvc-gP-tsL"/>
+                        <outlet property="teamNotes" destination="H8g-0F-JlW" id="D72-DU-WGJ"/>
                         <outlet property="teamNumber" destination="94h-gD-bHw" id="CXQ-mg-cKN"/>
                         <outlet property="teamRating" destination="QDL-tm-J52" id="i92-vZ-Aa1"/>
                         <outlet property="totesStack" destination="xvG-sz-eE6" id="8bH-rM-6LN"/>

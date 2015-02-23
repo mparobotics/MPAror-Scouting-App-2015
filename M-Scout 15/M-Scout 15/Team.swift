@@ -38,7 +38,7 @@ class Team: NSObject {
     
     var teamRating: Int = 0
     
-    var teamComments:NSString = ""
+    var teamNotes:NSString = ""
     
     var filePath:NSString = ""
     
@@ -87,7 +87,7 @@ class Team: NSObject {
             
             teamRating = json["teamRating"].intValue
             
-            teamComments = json["teamComments"].stringValue
+            teamNotes = json["teamNotes"].stringValue
             
             teamExists = true;
             
@@ -101,7 +101,7 @@ class Team: NSObject {
     func save() {
         NSLog("Saving team %d...", teamNumber)
         //File.remove(filePath)
-        let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamComments": teamComments])
+        let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamNotes": teamNotes])
         File.write(filePath, content: json.description, encoding: NSASCIIStringEncoding)
         
     }
@@ -112,7 +112,7 @@ class Team: NSObject {
         
         //File.remove(filePath)
         
-        NSLog("Team Number: %d", teamNumber)
+        //NSLog("Team Number: %d", teamNumber)
         
     }
 }

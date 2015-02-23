@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B32440801A93FC2B00A3F32C /* M-Scout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324407F1A93FC2B00A3F32C /* M-Scout.swift */; };
 		B32440821A94019400A3F32C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32440811A94019400A3F32C /* Team.swift */; };
+		B32B435E1A9B085300B496D5 /* TeamNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B435D1A9B085300B496D5 /* TeamNotes.swift */; };
 		B34EE9EA1A955B1E0024BAEA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34EE9E91A955B1E0024BAEA /* SwiftyJSON.swift */; };
 		B34EE9EE1A955CBA0024BAEA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34EE9ED1A955CBA0024BAEA /* File.swift */; };
 		B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		B324407F1A93FC2B00A3F32C /* M-Scout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "M-Scout.swift"; sourceTree = "<group>"; };
 		B32440811A94019400A3F32C /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		B32B435D1A9B085300B496D5 /* TeamNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotes.swift; sourceTree = "<group>"; };
 		B34EE9E91A955B1E0024BAEA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B34EE9ED1A955CBA0024BAEA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B3EE80121A93338A00E5B293 /* PitScouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitScouting.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				B3EE80121A93338A00E5B293 /* PitScouting.swift */,
+				B32B435D1A9B085300B496D5 /* TeamNotes.swift */,
 			);
 			name = "Panel View Controllers";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				B32440821A94019400A3F32C /* Team.swift in Sources */,
 				B3F9F4F71A8BE8F500053BC2 /* DetailViewController.swift in Sources */,
 				B3EE80131A93338A00E5B293 /* PitScouting.swift in Sources */,
+				B32B435E1A9B085300B496D5 /* TeamNotes.swift in Sources */,
 				B3F9F4F51A8BE8F500053BC2 /* MasterViewController.swift in Sources */,
 				B32440801A93FC2B00A3F32C /* M-Scout.swift in Sources */,
 				B34EE9EE1A955CBA0024BAEA /* File.swift in Sources */,
