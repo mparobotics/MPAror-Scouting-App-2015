@@ -37,7 +37,7 @@ class File: NSObject {
             
             let flippedImage = UIImage(CGImage: rawImage?.CGImage, scale: 1.0, orientation: .DownMirrored)
             
-            return flippedImage
+            return rawImage
         }
         
         return nil

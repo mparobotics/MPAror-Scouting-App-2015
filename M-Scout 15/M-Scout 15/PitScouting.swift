@@ -335,8 +335,9 @@ class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePick
             
             
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
             imagePicker.allowsEditing = false
+            imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Rear
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
