@@ -63,7 +63,6 @@
                         <segue destination="8ci-df-GKF" kind="showDetail" identifier="Pit Scouting" id="iNV-vi-tpb"/>
                         <segue destination="Pcu-wP-KHx" kind="showDetail" identifier="Team Lookup" id="1up-UH-se9"/>
                         <segue destination="qoq-2W-ACp" kind="showDetail" identifier="Alliance Visualizer" id="xne-MP-GMR"/>
-                        <segue destination="pEW-sr-tHW" kind="showDetail" identifier="Match Scouting" id="l66-lm-hwC"/>
                         <segue destination="c29-c0-ve1" kind="showDetail" identifier="Scouting Report" id="8hM-hu-9cQ"/>
                         <segue destination="whM-CQ-I0y" kind="showDetail" identifier="Team Communication" id="xD5-7b-L3d"/>
                         <segue destination="atV-aO-m69" kind="showDetail" identifier="2015 MPAror Robot" id="17l-Hh-d7o"/>
@@ -1507,7 +1506,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2560.5" y="-657.75"/>
+            <point key="canvasLocation" x="1990.5" y="-1409.25"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -1649,44 +1648,10 @@
             </objects>
             <point key="canvasLocation" x="570.75" y="988.5"/>
         </scene>
-        <!--Match Scouting-->
-        <scene sceneID="Gft-u5-bRS">
-            <objects>
-                <viewController title="Match Scouting" id="M3Z-43-TUa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="d6a-Lf-EiH"/>
-                        <viewControllerLayoutGuide type="bottom" id="M0a-4y-g1Y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aPw-Oj-OFD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gMy-SC-4mc">
-                                <rect key="frame" x="239" y="286" width="123" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Match Scouting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhs-gC-V3x">
-                                <rect key="frame" x="271" y="94" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Match Scouting" id="BG6-L9-ppI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gjz-vH-zPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3912" y="-630"/>
-        </scene>
-        <!--Team Visualizer-->
+        <!--Alliance Visualizer-->
         <scene sceneID="Zll-Qp-0n7">
             <objects>
-                <viewController title="Team Visualizer" id="E7c-pG-CNg" sceneMemberID="viewController">
+                <viewController title="Team Visualizer" id="E7c-pG-CNg" userLabel="Alliance Visualizer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VzM-Dq-vKz"/>
                         <viewControllerLayoutGuide type="bottom" id="eKl-aP-9jD"/>
@@ -1702,16 +1667,19 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Visualizer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t0-it-SCd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alliance Visualizer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t0-it-SCd">
                                 <rect key="frame" x="279" y="94" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="94" width="137" height="21"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Team Visualizer" id="71U-aY-QZi"/>
+                    <navigationItem key="navigationItem" title="Alliance Visualizer" id="71U-aY-QZi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOo-f7-nSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1786,25 +1754,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pE-kK-Kvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.5" y="-657.75"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lUP-OA-wxe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pEW-sr-tHW" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9J6-Re-c3p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="M3Z-43-TUa" kind="relationship" relationship="rootViewController" id="Rkb-Cf-2EB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="51F-5v-CNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3303" y="-630"/>
+            <point key="canvasLocation" x="1381.5" y="-1409.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WGi-d7-X7g">
