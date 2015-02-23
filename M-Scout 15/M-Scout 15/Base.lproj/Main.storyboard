@@ -1754,7 +1754,7 @@
         <!--Team Website-->
         <scene sceneID="TCx-nN-FsQ">
             <objects>
-                <viewController title="Team Website" id="4bY-Me-h0b" sceneMemberID="viewController">
+                <viewController title="Team Website" id="4bY-Me-h0b" customClass="TeamWebsite" customModule="M_Scout_15" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E9R-ZT-jwe"/>
                         <viewControllerLayoutGuide type="bottom" id="zmk-6L-SoA"/>
@@ -1762,24 +1762,12 @@
                     <view key="view" contentMode="scaleToFill" id="IBQ-AS-kpX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lhe-zI-LhM">
-                                <rect key="frame" x="239" y="286" width="123" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36O-AJ-XGP">
-                                <rect key="frame" x="279" y="104" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team Website" id="psh-VS-iDI"/>
+                    <connections>
+                        <outlet property="containerView" destination="IBQ-AS-kpX" id="z3Z-0z-Ti7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ff4-8y-adG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
