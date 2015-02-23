@@ -151,6 +151,9 @@
                                     <segment title="Litter"/>
                                     <segment title="No Litter"/>
                                 </segments>
+                                <connections>
+                                    <action selector="updateScoringCategories:" destination="gUU-6t-fx7" eventType="valueChanged" id="Tjg-Wo-vR6"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="B1e-e8-49k">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
@@ -206,6 +209,9 @@
                                     <segment title="Auto"/>
                                     <segment title="No Auto"/>
                                 </segments>
+                                <connections>
+                                    <action selector="updateScoringCategories:" destination="gUU-6t-fx7" eventType="valueChanged" id="Q10-yc-csU"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Nfh-aj-FNs">
                                 <rect key="frame" x="16" y="243" width="300" height="29"/>
@@ -213,13 +219,9 @@
                                     <segment title="Totes"/>
                                     <segment title="No Totes"/>
                                 </segments>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="xHR-aP-6qg">
-                                <rect key="frame" x="16" y="279" width="300" height="29"/>
-                                <segments>
-                                    <segment title="Containers"/>
-                                    <segment title="No Containers"/>
-                                </segments>
+                                <connections>
+                                    <action selector="updateScoringCategories:" destination="gUU-6t-fx7" eventType="valueChanged" id="QrZ-HG-eql"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzF-ZB-C3U">
                                 <rect key="frame" x="275" y="368" width="50" height="21"/>
@@ -271,10 +273,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-47-jqf">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-47-jqf">
                                 <rect key="frame" x="541" y="384" width="51" height="31"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Olf-j9-4TA">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Olf-j9-4TA">
                                 <rect key="frame" x="541" y="423" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zone Change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ji-IB-J7o">
@@ -299,7 +301,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wva-G5-2zd">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wva-G5-2zd">
                                 <rect key="frame" x="541" y="462" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision Track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eql-5D-ekd">
@@ -324,10 +326,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-LL-BOj">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-LL-BOj">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <connections>
+                                    <action selector="updateStackLevels:" destination="gUU-6t-fx7" eventType="valueChanged" id="FA3-YC-ksq"/>
+                                </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-xL-JDu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-xL-JDu">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="VLQ-YA-eLc"/>
@@ -399,7 +404,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zRK-Q5-qIk">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zRK-Q5-qIk">
                                 <rect key="frame" x="541" y="384" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZu-Ev-0cz">
@@ -424,7 +429,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WwQ-l2-BNu">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WwQ-l2-BNu">
                                 <rect key="frame" x="541" y="423" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inverted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-O4-egJ">
@@ -449,7 +454,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hCb-B1-9Om">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hCb-B1-9Om">
                                 <rect key="frame" x="541" y="462" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN7-ce-p7s">
@@ -474,10 +479,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="rJ5-Gb-yW6">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="rJ5-Gb-yW6">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <connections>
+                                    <action selector="updateStackLevels:" destination="gUU-6t-fx7" eventType="valueChanged" id="ryH-3y-gvH"/>
+                                </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvG-sz-eE6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvG-sz-eE6">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="Y5j-U5-kcH"/>
@@ -525,7 +533,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-zV-VWF">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-zV-VWF">
                                 <rect key="frame" x="541" y="384" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landfill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edo-r0-kOm">
@@ -550,7 +558,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-0I-ONg">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-0I-ONg">
                                 <rect key="frame" x="541" y="423" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Container" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTA-el-QJO">
@@ -575,7 +583,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NaH-Ra-AQ2">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NaH-Ra-AQ2">
                                 <rect key="frame" x="541" y="462" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ground" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD9-Rr-eLQ">
@@ -600,10 +608,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="5dE-k9-Dkz">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="5dE-k9-Dkz">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <connections>
+                                    <action selector="updateStackLevels:" destination="gUU-6t-fx7" eventType="valueChanged" id="otp-SJ-Xlo"/>
+                                </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-HL-cO2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-HL-cO2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="LJy-gO-91B">
@@ -653,10 +664,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-Nw-AEt">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-Nw-AEt">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
+                                <connections>
+                                    <action selector="updateStackLevels:" destination="gUU-6t-fx7" eventType="valueChanged" id="oJd-O7-vx3"/>
+                                </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8c-24-rBy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8c-24-rBy">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="gru-Vo-OCR"/>
@@ -800,6 +814,9 @@
                                         <include reference="QTA-oz-HKT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="saveTeam:" destination="gUU-6t-fx7" eventType="touchUpInside" id="lGf-3t-brQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9p-ep-D2l">
                                 <rect key="frame" x="275" y="368" width="50" height="21"/>
@@ -830,8 +847,19 @@
                                     <segment title="10"/>
                                 </segments>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="xHR-aP-6qg">
+                                <rect key="frame" x="16" y="279" width="300" height="29"/>
+                                <segments>
+                                    <segment title="Containers"/>
+                                    <segment title="No Containers"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateScoringCategories:" destination="gUU-6t-fx7" eventType="valueChanged" id="Nj2-Oe-1P7"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="N8c-24-rBy" firstAttribute="top" secondItem="e5x-ar-kw0" secondAttribute="bottom" constant="1" id="0km-tm-EhW"/>
                             <constraint firstItem="LZu-Ev-0cz" firstAttribute="top" secondItem="rJ5-Gb-yW6" secondAttribute="bottom" constant="11" id="19B-Yw-uyv">
@@ -885,13 +913,17 @@
                             <constraint firstItem="5I7-ZJ-ZeR" firstAttribute="top" secondItem="11O-H4-h6E" secondAttribute="bottom" constant="8" symbolic="YES" id="DD6-pQ-1D6"/>
                             <constraint firstItem="5I7-ZJ-ZeR" firstAttribute="leading" secondItem="Nfh-aj-FNs" secondAttribute="leading" id="DZo-G1-VZd"/>
                             <constraint firstItem="11O-H4-h6E" firstAttribute="leading" secondItem="5I7-ZJ-ZeR" secondAttribute="leading" id="Dbj-de-hkV"/>
-                            <constraint firstItem="xHR-aP-6qg" firstAttribute="top" secondItem="Nfh-aj-FNs" secondAttribute="bottom" constant="8" symbolic="YES" id="EOf-mc-bmj"/>
+                            <constraint firstItem="xHR-aP-6qg" firstAttribute="top" secondItem="Nfh-aj-FNs" secondAttribute="bottom" constant="8" symbolic="YES" id="EOf-mc-bmj">
+                                <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="d4c-HL-cO2" secondAttribute="trailing" constant="13" id="Eht-hn-2RP"/>
                             <constraint firstItem="xHR-aP-6qg" firstAttribute="trailing" secondItem="HGW-f8-VXu" secondAttribute="trailing" id="FFY-rZ-CWp"/>
                             <constraint firstItem="xvG-sz-eE6" firstAttribute="top" secondItem="kMx-Ab-SOo" secondAttribute="bottom" constant="1" id="Fnd-17-8dW">
                                 <variation key="heightClass=regular-widthClass=regular" constant="3"/>
                             </constraint>
-                            <constraint firstItem="Bbq-CS-4tE" firstAttribute="top" secondItem="HGW-f8-VXu" secondAttribute="bottom" constant="8" symbolic="YES" id="Fr9-vu-ioD"/>
+                            <constraint firstItem="Bbq-CS-4tE" firstAttribute="top" secondItem="HGW-f8-VXu" secondAttribute="bottom" constant="8" symbolic="YES" id="Fr9-vu-ioD">
+                                <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                            </constraint>
                             <constraint firstItem="xHR-aP-6qg" firstAttribute="leading" secondItem="AS5-gM-vhq" secondAttribute="leadingMargin" id="G3R-hf-KZC"/>
                             <constraint firstItem="edo-r0-kOm" firstAttribute="top" secondItem="5dE-k9-Dkz" secondAttribute="bottom" constant="13" id="G8a-2c-8jU">
                                 <variation key="heightClass=regular-widthClass=regular" constant="9"/>
@@ -927,7 +959,9 @@
                             </constraint>
                             <constraint firstItem="B1e-e8-49k" firstAttribute="trailing" secondItem="d4c-HL-cO2" secondAttribute="trailing" id="Orv-HY-K3C"/>
                             <constraint firstItem="rJ5-Gb-yW6" firstAttribute="leading" secondItem="zC9-yt-WTw" secondAttribute="leading" id="Pdq-hI-caU"/>
-                            <constraint firstItem="HGW-f8-VXu" firstAttribute="top" secondItem="xHR-aP-6qg" secondAttribute="bottom" constant="8" symbolic="YES" id="Q9f-W0-s8x"/>
+                            <constraint firstItem="HGW-f8-VXu" firstAttribute="top" secondItem="xHR-aP-6qg" secondAttribute="bottom" constant="8" symbolic="YES" id="Q9f-W0-s8x">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-64"/>
+                            </constraint>
                             <constraint firstItem="eql-5D-ekd" firstAttribute="top" secondItem="0Ji-IB-J7o" secondAttribute="bottom" constant="9" id="QoC-kp-YJW"/>
                             <constraint firstItem="wva-G5-2zd" firstAttribute="top" secondItem="Olf-j9-4TA" secondAttribute="bottom" constant="4" id="R4M-q9-gea"/>
                             <constraint firstItem="qR6-Nw-AEt" firstAttribute="top" secondItem="5PO-DX-BqY" secondAttribute="bottom" constant="8" id="Rpj-jd-xbb"/>
@@ -1367,6 +1401,9 @@
                                 <include reference="R4M-q9-gea"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Dgb-2I-IEK" appends="YES" id="ga4-hl-fYO"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Pit Scouting" id="b5j-GR-bWF"/>
                     <connections>
@@ -1398,6 +1435,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecl-Do-pfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dgb-2I-IEK">
+                    <connections>
+                        <action selector="tapOutsideTextview:" destination="gUU-6t-fx7" id="7te-eW-caW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2560.5" y="-657.75"/>
         </scene>

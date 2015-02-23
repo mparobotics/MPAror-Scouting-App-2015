@@ -109,15 +109,10 @@ class Team: NSObject {
     
     func diag() {
         
-        //let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamComments": teamComments])
-        
-        
-        //File.write("/1234.json", content: "HelloWorld", encoding: NSASCIIStringEncoding)
-        
         //save();
         
         //File.remove(filePath)
         
-        //NSLog("Team Number: %d", teamNumber)
+        NSLog("Team Number: %d", teamNumber)
     }
 }
