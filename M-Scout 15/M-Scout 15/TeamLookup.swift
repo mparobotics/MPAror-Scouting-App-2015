@@ -17,11 +17,6 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        teams = M_Scout.teams.teamList as [Team]
-        
-        // Reload the table
-        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +34,7 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("LookupCell") as UITableViewCell
         
         var team : Team
         // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
@@ -51,6 +46,23 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
         
         // Configure the cell
         cell.textLabel!.text = String(format: "%d: %@", team.teamNumber, team.teamName)
+        if (team.robotImageSet) {
+            let image = team.robotImage
+            
+            let size = CGSizeApplyAffineTransform(image.size, CGAffineTransformMakeScale(0.07, 0.07))
+            let hasAlpha = false
+            let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+            
+            UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+            image.drawInRect(CGRect(origin: CGPointZero, size: size))
+            
+            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            cell.imageView?.image = scaledImage
+            cell.imageView?.layer.masksToBounds = true;
+            cell.imageView?.layer.cornerRadius = 5.0;
+        }
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
@@ -59,8 +71,11 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
         self.filteredTeams = self.teams.filter({( team: Team) -> Bool in
-            let stringMatch = String(format: "%d", team.teamNumber).rangeOfString(searchText)
-            return stringMatch != nil
+            let numberMatch = String(format: "%d", team.teamNumber).rangeOfString(searchText)
+            
+            let nameMatch = String(format: "%@", team.teamName.uppercaseString).rangeOfString(searchText.uppercaseString)
+            
+            return numberMatch != nil || nameMatch != nil
         })
     }
     
@@ -73,15 +88,23 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
     }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "teamLookupDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let controller = segue.destinationViewController as TeamDetail
+                controller.teamData = teams[indexPath.row]
+            }
+        }
     }
-    */
+    
+    override func viewDidAppear(animated: Bool) {
+        teams = M_Scout.teams.getTeams() as [Team]
+        
+        // Reload the table
+        self.tableView.reloadData()
+    }
+
 
 }

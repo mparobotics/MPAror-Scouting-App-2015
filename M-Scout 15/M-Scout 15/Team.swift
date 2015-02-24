@@ -12,14 +12,15 @@ class Team: NSObject {
     var teamNumber: Int = 0
     var teamName: NSString = ""
     
-    var robotImage:UIImage = UIImage(named: "M-Scout")!
+    var robotImage: UIImage = UIImage(named: "M-Scout")!
+    var robotImageSet: Bool = false
     
     var hasAuto: Bool = false
     var hasTotes: Bool = false
     var hasContainers: Bool = false
     var hasLitter: Bool = false
     
-    var driveStyle: Int = 0
+    var driveStyle: Int = -1
     
     var autoStack: Int = 0
     var canYellowBins: Bool = false
@@ -48,62 +49,64 @@ class Team: NSObject {
     var teamExists: Bool = false;
     
     init(number: Int = 0) {
-        
-        teamNumber = number;
-        
-        filePath = "\(teamNumber).json"
-        imagePath = "\(teamNumber).png"
-        
-        if (File.exists(filePath)) {
+        if (number > 0) {
+            teamNumber = number;
             
-            let json = JSON(JSONParseDictionary(File.read(filePath)!))
+            filePath = "\(teamNumber).json"
+            imagePath = "\(teamNumber).png"
             
-            //println(json.description)
-            
-            teamNumber = json["teamNumber"].intValue
-            teamName = json["teamName"].stringValue
-            
-            if (File.exists("\(teamNumber).png")) {
-                println("Image Exists")
-                robotImage = File.readImage(imagePath)!
+            if (File.exists(filePath)) {
+                
+                let json = JSON(JSONParseDictionary(File.read(filePath)!))
+                
+                //println(json.description)
+                
+                teamNumber = json["teamNumber"].intValue
+                teamName = json["teamName"].stringValue
+                
+                if (File.exists("\(teamNumber).png")) {
+                    robotImage = File.readImage(imagePath)!
+                    robotImageSet = true
+                } else {
+                    NSLog("No image at %@", imagePath)
+                    robotImageSet = false
+                }
+                
+                hasAuto = json["hasAuto"].boolValue
+                hasTotes = json["hasTotes"].boolValue
+                hasContainers = json["hasContainers"].boolValue
+                hasLitter = json["hasLitter"].boolValue
+                
+                driveStyle = json["driveStyle"].intValue
+                
+                autoStack = json["autoStack"].intValue
+                canYellowBins = json["canYellowBins"].boolValue
+                canZoneChange = json["canZoneChange"].boolValue
+                canVisionTrack = json["canVisionTrack"].boolValue
+                
+                totesStack = json["totesStack"].intValue
+                canUpright = json["canUpright"].boolValue
+                canInverted = json["canInverted"].boolValue
+                canFlip = json["canFlip"].boolValue
+                
+                litterStack = json["litterStack"].intValue
+                canLandfill = json["canLandfill"].boolValue
+                canContainer = json["canContainer"].boolValue
+                canGround = json["canGround"].boolValue
+                
+                containersStack = json["containersStack"].intValue
+                
+                teamRating = json["teamRating"].intValue
+                
+                teamNotes = json["teamNotes"].stringValue
+                
+                teamExists = true;
+                
+                NSLog("Loaded %d %@", teamNumber, teamName)
+                
             } else {
-                NSLog("No image at %@", imagePath)
+                NSLog("Team %d not located. New object created.", teamNumber)
             }
-            
-            hasAuto = json["hasAuto"].boolValue
-            hasTotes = json["hasTotes"].boolValue
-            hasContainers = json["hasContainers"].boolValue
-            hasLitter = json["hasLitter"].boolValue
-            
-            driveStyle = json["driveStyle"].intValue
-            
-            autoStack = json["autoStack"].intValue
-            canYellowBins = json["canYellowBins"].boolValue
-            canZoneChange = json["canZoneChange"].boolValue
-            canVisionTrack = json["canVisionTrack"].boolValue
-            
-            totesStack = json["totesStack"].intValue
-            canUpright = json["canUpright"].boolValue
-            canInverted = json["canInverted"].boolValue
-            canFlip = json["canFlip"].boolValue
-            
-            litterStack = json["litterStack"].intValue
-            canLandfill = json["canLandfill"].boolValue
-            canContainer = json["canContainer"].boolValue
-            canGround = json["canGround"].boolValue
-            
-            containersStack = json["containersStack"].intValue
-            
-            teamRating = json["teamRating"].intValue
-            
-            teamNotes = json["teamNotes"].stringValue
-            
-            teamExists = true;
-            
-            NSLog("Loaded %d %@", teamNumber, teamName)
-            
-        } else {
-            NSLog("Team %d not located. New object created.", teamNumber)
         }
     }
     

@@ -335,9 +335,18 @@ class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePick
             
             
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            if UIDevice.currentDevice().model == "iPad Simulator" {
+                imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            } else {
+                println(UIDevice.currentDevice().model)
+                imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+                imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+            }
+            
+            
             imagePicker.allowsEditing = false
-            imagePicker.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+            
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }

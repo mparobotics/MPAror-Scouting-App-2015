@@ -12,7 +12,6 @@ import UIKit
 class M_Scout: NSObject {
     
     struct teams {
-        static var teamList = M_Scout.teams.getTeams();
         
         static func getTeams() -> NSArray {
             
@@ -34,7 +33,7 @@ class M_Scout: NSObject {
         }
         
         static func printTeams() {
-            for team in M_Scout.teams.teamList {
+            for team in M_Scout.teams.getTeams() {
                 let currentTeam = team as Team
                 currentTeam.diag()
             }

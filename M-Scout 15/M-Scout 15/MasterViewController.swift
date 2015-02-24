@@ -116,6 +116,8 @@ class MasterViewController: UITableViewController {
         }
         
         cell.imageView?.image = UIImage(named: cell.textLabel!.text!+" Icon")
+        cell.imageView?.layer.masksToBounds = true;
+        cell.imageView?.layer.cornerRadius = 5.0;
         
         return cell
     }
