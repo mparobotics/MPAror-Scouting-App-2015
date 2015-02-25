@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     
-    var scoutingTools: NSMutableArray = ["Pit Scouting", "Team Lookup", "Alliance Visualizer", "Scouting Report"]
+    var scoutingTools: NSMutableArray = ["Pit Scouting", "Match Scouting", "Team Lookup", "Alliance Visualizer"]
     var teamResources: NSMutableArray = ["2015 MPAror Robot", "Team Website"]
 
     override func awakeFromNib() {

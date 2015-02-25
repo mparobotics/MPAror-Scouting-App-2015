@@ -95,6 +95,7 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let controller = segue.destinationViewController as TeamDetail
                 controller.teamData = teams[indexPath.row]
+                controller.closeButton.enabled = false
             }
         }
         

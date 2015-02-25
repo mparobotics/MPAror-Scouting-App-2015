@@ -28,6 +28,7 @@ class TeamDetail: UIViewController {
     @IBOutlet var teamNotes: UITextView!
     @IBOutlet var robotImage: UIImageView!
     @IBOutlet var teamTitle: UILabel!
+    @IBOutlet var closeButton: UIBarButtonItem!
     
     var teamData = Team()
 

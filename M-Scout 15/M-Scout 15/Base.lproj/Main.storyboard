@@ -63,7 +63,7 @@
                         <segue destination="8ci-df-GKF" kind="showDetail" identifier="Pit Scouting" id="iNV-vi-tpb"/>
                         <segue destination="Pcu-wP-KHx" kind="showDetail" identifier="Team Lookup" id="1up-UH-se9"/>
                         <segue destination="qoq-2W-ACp" kind="showDetail" identifier="Alliance Visualizer" id="xne-MP-GMR"/>
-                        <segue destination="c29-c0-ve1" kind="showDetail" identifier="Scouting Report" id="8hM-hu-9cQ"/>
+                        <segue destination="c29-c0-ve1" kind="showDetail" identifier="Match Scouting" id="8hM-hu-9cQ"/>
                         <segue destination="atV-aO-m69" kind="showDetail" identifier="2015 MPAror Robot" id="17l-Hh-d7o"/>
                         <segue destination="vyf-G2-dxN" kind="showDetail" identifier="Team Website" id="NHf-kx-TRB"/>
                     </connections>
@@ -2071,11 +2071,11 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZv-OH-FY7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZv-OH-FY7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="mpx-hB-2t5"/>
+                                    <constraint firstAttribute="height" constant="150" id="mpx-hB-2t5"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3020,6 +3020,7 @@
                         <outlet property="canVisionTrack" destination="3FE-3O-kqp" id="icf-Jz-6de"/>
                         <outlet property="canYellowBins" destination="C80-qh-Qwt" id="U2F-W2-3SG"/>
                         <outlet property="canZoneChange" destination="Ka2-MA-5U1" id="MDg-eg-FaF"/>
+                        <outlet property="closeButton" destination="cwj-Y6-DrM" id="bGb-V3-c7g"/>
                         <outlet property="containerStackHeight" destination="FoU-An-nJH" id="9VD-b4-bJl"/>
                         <outlet property="driveStyle" destination="uSx-ox-2kQ" id="ZoW-Ve-ErS"/>
                         <outlet property="litterStackHeight" destination="nSZ-QW-2BS" id="kTu-zc-grb"/>
