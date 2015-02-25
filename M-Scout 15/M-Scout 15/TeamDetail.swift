@@ -35,8 +35,10 @@ class TeamDetail: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        teamTitle.text = String(format: "%d: %@",teamData.teamNumber, teamData.teamName)
+        teamData.wins = 1;
+        teamData.losses = 2;
+        teamData.ties = 3;
+        teamTitle.text = String(format: "%d: %@ (%d-%d-%d)",teamData.teamNumber, teamData.teamName, teamData.wins, teamData.losses, teamData.ties)
         
         if (teamData.robotImageSet) {
             robotImage.image = teamData.robotImage
@@ -101,6 +103,10 @@ class TeamDetail: UIViewController {
         } else {
             canGround.image = UIImage(named: "M-Scout")
         }
+    }
+    
+    @IBAction func closeWindow(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

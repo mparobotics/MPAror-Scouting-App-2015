@@ -97,6 +97,13 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
                 controller.teamData = teams[indexPath.row]
             }
         }
+        
+        if segue.identifier == "allianceMemberLookup" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let controller = segue.destinationViewController as AllianceMember
+                controller.teamData = teams[indexPath.row]
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

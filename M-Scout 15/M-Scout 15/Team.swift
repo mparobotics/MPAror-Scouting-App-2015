@@ -48,6 +48,11 @@ class Team: NSObject {
     
     var teamExists: Bool = false;
     
+    //Not in DS
+    var wins: Int = 0
+    var losses: Int = 0;
+    var ties: Int = 0;
+    
     init(number: Int = 0) {
         if (number > 0) {
             teamNumber = number;

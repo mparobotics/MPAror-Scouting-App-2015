@@ -161,6 +161,22 @@ class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePick
             teamRating.selectedSegmentIndex = currentTeam.teamRating
             
             updateScoringCategories(self)
+        } else {
+            resetView()
+            
+            teamNumber.text = String(format: "%d", currentTeam.teamNumber)
+            
+            teamName.enabled = true
+            hasAuto.enabled = true
+            hasTotes.enabled = true
+            hasLitter.enabled = true
+            hasContainers.enabled = true
+            driveStyle.enabled = true
+            teamRating.enabled = true
+            robotImage.userInteractionEnabled = true
+            
+            teamNotes.enabled = true
+            saveTeam.enabled = true
         }
     }
 
