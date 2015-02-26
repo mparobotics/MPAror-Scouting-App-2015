@@ -13,7 +13,7 @@ class M_Scout: NSObject {
     
     struct teams {
         
-        static func getTeams() -> NSArray {
+        static func getTeams() -> [Team] {
             
             var teams: [Team] = []
             
