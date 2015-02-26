@@ -18,6 +18,8 @@ class MatchMember: UIViewController {
     
     var teamData = Team()
     var matchNumber:Int = 0
+    var matchColor:Int = -1
+    var matchWinner:Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +30,16 @@ class MatchMember: UIViewController {
         
         teamTitle.text = String(format: "M%d - %d: %@", matchNumber, teamData.teamNumber, teamData.teamName)
         
-        /*
-        teamData.wins = 1;
-        teamData.losses = 2;
-        teamData.ties = 3;
-        
-        let autoString = "(Yellow Bins, Zone Change, Vision Track)"
-        let totesString = "(Upright, Inverted, Flip)"
-        let litterString = "(Landfill, Container, Ground)"
-        notes.text = String(format: "Auto Height: %d %@\n\nTotes Height: %d %@\n\nLitter Height: %d %@\n\nContainer Height: %d\n\nNotes:\n%@", teamData.autoStack, autoString, teamData.totesStack, totesString, teamData.litterStack, litterString, teamData.containersStack, teamData.teamNotes)
-        */
-        
         updateSaveButton()
     }
     
     func updateMatchNumber(notification: NSNotification) {
         let userInfo:Dictionary<String,String!> = notification.userInfo as Dictionary<String,String!>
         let messageString: NSString = userInfo["message"]!
+        let winnerString: NSString = userInfo["details"]!
         
         matchNumber = messageString.integerValue
+        matchWinner = winnerString.integerValue
         teamTitle.text = String(format: "M%d - %d: %@", matchNumber, teamData.teamNumber, teamData.teamName)
         updateSaveButton()
     }
@@ -56,7 +49,7 @@ class MatchMember: UIViewController {
     }
     
     func updateSaveButton() {
-        if (matchNumber > 0) {
+        if (matchNumber > 0 && matchContribution.selectedSegmentIndex >= 0) {
             saveButton.enabled = true
         } else {
             saveButton.enabled = false
@@ -68,30 +61,24 @@ class MatchMember: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "allianceMemberDetail" {
-            let navController = segue.destinationViewController as UINavigationController
-            if (navController.viewControllers.count > 0) {
-                let controller = navController.viewControllers[0] as TeamDetail
-                controller.teamData = teamData
-            }
-        }
+    @IBAction func contributionChanged(sender: AnyObject) {
+        updateSaveButton()
     }
-    
 
     @IBAction func saveTeam(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "matchNotes" {
+            let controller = (segue.destinationViewController as UINavigationController).topViewController as MatchNotes
+            controller.teamData = teamData
+            controller.matchNumber = matchNumber
+            controller.matchColor = matchColor
+            controller.matchWinner = matchWinner
+            controller.matchContribution = matchContribution.selectedSegmentIndex
+            controller.matchRating = Int(matchRating.value)
+        }
     }
-    */
 
 }

@@ -22,15 +22,12 @@ class AllianceMember: UIViewController {
         // Do any additional setup after loading the view.
         
         teamTitle.text = String(format: "%d: %@",teamData.teamNumber, teamData.teamName)
-        teamData.wins = 1;
-        teamData.losses = 2;
-        teamData.ties = 3;
         matchHistory.text = String(format: "W-L-T (%d-%d-%d)", teamData.wins, teamData.losses, teamData.ties)
         
         let autoString = "(Yellow Bins, Zone Change, Vision Track)"
         let totesString = "(Upright, Inverted, Flip)"
         let litterString = "(Landfill, Container, Ground)"
-        notes.text = String(format: "Auto Height: %d %@\n\nTotes Height: %d %@\n\nLitter Height: %d %@\n\nContainer Height: %d\n\nNotes:\n%@", teamData.autoStack, autoString, teamData.totesStack, totesString, teamData.litterStack, litterString, teamData.containersStack, teamData.teamNotes)
+        notes.text = String(format: "Auto Height: %d %@\n\nTotes Height: %d %@\n\nLitter Height: %d %@\n\nContainer Height: %d\n\nNotes:\n%@\n\n", teamData.autoStack, autoString, teamData.totesStack, totesString, teamData.litterStack, litterString, teamData.containersStack, teamData.teamNotes, teamData.matchNotes)
     }
 
     override func didReceiveMemoryWarning() {

@@ -36,9 +36,6 @@ class TeamDetail: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        teamData.wins = 1;
-        teamData.losses = 2;
-        teamData.ties = 3;
         teamTitle.text = String(format: "%d: %@ (%d-%d-%d)",teamData.teamNumber, teamData.teamName, teamData.wins, teamData.losses, teamData.ties)
         
         if (teamData.robotImageSet) {
@@ -47,7 +44,7 @@ class TeamDetail: UIViewController {
             robotImage.image = UIImage(named: "M-Scout")
         }
         
-        teamNotes.text = teamData.teamNotes
+        teamNotes.text = String(format: "%@\n\n%@", teamData.teamNotes, teamData.matchNotes)
         driveStyle.selectedSegmentIndex = teamData.driveStyle
         
         autoStackHeight.text = String(format: "Autonymous Stack Height: %d",teamData.autoStack)
@@ -58,51 +55,51 @@ class TeamDetail: UIViewController {
         teamRating.text = String(format: "%d", teamData.teamRating+1)
         
         if (teamData.canYellowBins) {
-            canYellowBins.image = UIImage(named: "MPArorLogo")
+            canYellowBins.image = UIImage(named: "Check")
         } else {
-            canYellowBins.image = UIImage(named: "M-Scout")
+            canYellowBins.image = UIImage(named: "X")
         }
         if (teamData.canZoneChange) {
-            canZoneChange.image = UIImage(named: "MPArorLogo")
+            canZoneChange.image = UIImage(named: "Check")
         } else {
-            canZoneChange.image = UIImage(named: "M-Scout")
+            canZoneChange.image = UIImage(named: "X")
         }
         if (teamData.canVisionTrack) {
-            canVisionTrack.image = UIImage(named: "MPArorLogo")
+            canVisionTrack.image = UIImage(named: "Check")
         } else {
-            canVisionTrack.image = UIImage(named: "M-Scout")
+            canVisionTrack.image = UIImage(named: "X")
         }
         
         if (teamData.canUpright) {
-            canUpright.image = UIImage(named: "MPArorLogo")
+            canUpright.image = UIImage(named: "Check")
         } else {
-            canUpright.image = UIImage(named: "M-Scout")
+            canUpright.image = UIImage(named: "X")
         }
         if (teamData.canInverted) {
-            canInverted.image = UIImage(named: "MPArorLogo")
+            canInverted.image = UIImage(named: "Check")
         } else {
-            canInverted.image = UIImage(named: "M-Scout")
+            canInverted.image = UIImage(named: "X")
         }
         if (teamData.canFlip) {
-            canFlip.image = UIImage(named: "MPArorLogo")
+            canFlip.image = UIImage(named: "Check")
         } else {
-            canFlip.image = UIImage(named: "M-Scout")
+            canFlip.image = UIImage(named: "X")
         }
         
         if (teamData.canLandfill) {
-            canLandfill.image = UIImage(named: "MPArorLogo")
+            canLandfill.image = UIImage(named: "Check")
         } else {
-            canLandfill.image = UIImage(named: "M-Scout")
+            canLandfill.image = UIImage(named: "X")
         }
         if (teamData.canContainer) {
-            canContainer.image = UIImage(named: "MPArorLogo")
+            canContainer.image = UIImage(named: "Check")
         } else {
-            canContainer.image = UIImage(named: "M-Scout")
+            canContainer.image = UIImage(named: "X")
         }
         if (teamData.canGround) {
-            canGround.image = UIImage(named: "MPArorLogo")
+            canGround.image = UIImage(named: "Check")
         } else {
-            canGround.image = UIImage(named: "M-Scout")
+            canGround.image = UIImage(named: "X")
         }
     }
     

@@ -22,9 +22,10 @@ class M_Scout: NSObject {
             let enumerator:NSDirectoryEnumerator = fileManager.enumeratorAtPath(documentsPath)!
             
             while let element = enumerator.nextObject() as? String {
-                if element.hasSuffix("json") { // checks the extension
-                    var fileNameArr = split(element) {$0 == "."}
+                if element.hasSuffix("_Team.json") { // checks the extension
+                    var fileNameArr = split(element) {$0 == "_"}
                     var teamNumber: String = fileNameArr[0]
+                    
                     teams.append(Team(number: teamNumber.toInt()!))
                 }
             }

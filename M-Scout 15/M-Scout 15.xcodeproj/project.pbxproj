@@ -15,6 +15,7 @@
 		B37719821A9E81A400B875B1 /* AllianceMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37719811A9E81A400B875B1 /* AllianceMember.swift */; };
 		B37719891A9EB3B000B875B1 /* MatchMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37719881A9EB3B000B875B1 /* MatchMember.swift */; };
 		B377198B1A9EC8CC00B875B1 /* MatchScouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377198A1A9EC8CC00B875B1 /* MatchScouting.swift */; };
+		B377198D1A9EE76100B875B1 /* MatchNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377198C1A9EE76100B875B1 /* MatchNotes.swift */; };
 		B3A33BE21A8ED07E003BD957 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F9F4FB1A8BE8F500053BC2 /* Images.xcassets */; };
 		B3A850BE1A9BC12800E2F560 /* TeamLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A850BD1A9BC12800E2F560 /* TeamLookup.swift */; };
 		B3A850E91A9BE96F00E2F560 /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3A850CA1A9BE96F00E2F560 /* SVWebViewController.strings */; };
@@ -60,6 +61,7 @@
 		B37719811A9E81A400B875B1 /* AllianceMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllianceMember.swift; sourceTree = "<group>"; };
 		B37719881A9EB3B000B875B1 /* MatchMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchMember.swift; sourceTree = "<group>"; };
 		B377198A1A9EC8CC00B875B1 /* MatchScouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchScouting.swift; sourceTree = "<group>"; };
+		B377198C1A9EE76100B875B1 /* MatchNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchNotes.swift; sourceTree = "<group>"; };
 		B3A850BD1A9BC12800E2F560 /* TeamLookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamLookup.swift; sourceTree = "<group>"; };
 		B3A850CB1A9BE96F00E2F560 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
 		B3A850CC1A9BE96F00E2F560 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				B37719811A9E81A400B875B1 /* AllianceMember.swift */,
 				B37719881A9EB3B000B875B1 /* MatchMember.swift */,
 				B377198A1A9EC8CC00B875B1 /* MatchScouting.swift */,
+				B377198C1A9EE76100B875B1 /* MatchNotes.swift */,
 			);
 			name = "Panel View Controllers";
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				B3F9F4F71A8BE8F500053BC2 /* DetailViewController.swift in Sources */,
 				B3A850FB1A9BEADD00E2F560 /* TeamWebsite.m in Sources */,
 				B3EE80131A93338A00E5B293 /* PitScouting.swift in Sources */,
+				B377198D1A9EE76100B875B1 /* MatchNotes.swift in Sources */,
 				B37719891A9EB3B000B875B1 /* MatchMember.swift in Sources */,
 				B37719821A9E81A400B875B1 /* AllianceMember.swift in Sources */,
 				B32B435E1A9B085300B496D5 /* TeamNotes.swift in Sources */,

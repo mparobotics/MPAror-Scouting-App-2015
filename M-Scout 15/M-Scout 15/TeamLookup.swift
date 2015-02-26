@@ -13,7 +13,8 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
     var teams = [Team]()
     var filteredTeams = [Team]()
     
-    var matchNumber: Int = 0
+    var matchNumber: Int = -1
+    var matchWinner: Int = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,8 +97,10 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
     func updateMatchNumber(notification: NSNotification) {
         let userInfo:Dictionary<String,String!> = notification.userInfo as Dictionary<String,String!>
         let messageString: NSString = userInfo["message"]!
+        let winnerString: NSString = userInfo["details"]!
         
         matchNumber = messageString.integerValue
+        matchWinner = winnerString.integerValue
     }
     
 
@@ -117,11 +120,23 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
             }
         }
         
-        if segue.identifier == "matchMemberLookup" {
+        if segue.identifier == "matchMemberLookupBlue" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let controller = segue.destinationViewController as MatchMember
                 controller.teamData = teams[indexPath.row]
                 controller.matchNumber = matchNumber
+                controller.matchWinner = matchWinner
+                controller.matchColor = 0
+            }
+        }
+        
+        if segue.identifier == "matchMemberLookupRed" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let controller = segue.destinationViewController as MatchMember
+                controller.teamData = teams[indexPath.row]
+                controller.matchNumber = matchNumber
+                controller.matchWinner = matchWinner
+                controller.matchColor = 1
             }
         }
     }

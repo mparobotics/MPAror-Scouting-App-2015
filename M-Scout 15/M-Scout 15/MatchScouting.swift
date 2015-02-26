@@ -10,6 +10,7 @@ import UIKit
 
 class MatchScouting: UIViewController, UITextFieldDelegate {
     @IBOutlet var matchNumber: UITextField!
+    @IBOutlet var matchWin: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,9 @@ class MatchScouting: UIViewController, UITextFieldDelegate {
     
     @IBAction func matchNumberChanged(sender: AnyObject) {
         let fieldText = matchNumber.text as NSString
-        if (fieldText.integerValue > 0) {
-            NSNotificationCenter.defaultCenter().postNotificationName("org.team3926.scouting.2015.M-Scout.UpdateMatchMember", object: self, userInfo:["message":matchNumber.text])
+        if (fieldText.integerValue > 0 && matchWin.selectedSegmentIndex >= 0) {
+            NSNotificationCenter.defaultCenter().postNotificationName("org.team3926.scouting.2015.M-Scout.UpdateMatchMember", object: self, userInfo:["message":matchNumber.text,
+                "details":String(format: "%d", matchWin.selectedSegmentIndex)])
         }
     }
     

@@ -44,20 +44,23 @@ class Team: NSObject {
     var teamNotes:NSString = ""
     
     var filePath:NSString = ""
+    var matchFilePath:NSString = ""
     var imagePath:NSString = ""
     
     var teamExists: Bool = false;
     
-    //Not in DS
     var wins: Int = 0
     var losses: Int = 0;
     var ties: Int = 0;
+    
+    var matchNotes: NSString = ""
     
     init(number: Int = 0) {
         if (number > 0) {
             teamNumber = number;
             
-            filePath = "\(teamNumber).json"
+            filePath = "\(teamNumber)_Team.json"
+            matchFilePath = "\(teamNumber)_Match.json"
             imagePath = "\(teamNumber).png"
             
             if (File.exists(filePath)) {
@@ -107,6 +110,14 @@ class Team: NSObject {
                 
                 teamExists = true;
                 
+                if (File.exists(matchFilePath)) {
+                    let matchJson = JSON(JSONParseDictionary(File.read(matchFilePath)!))
+                    wins = matchJson["wins"].intValue
+                    losses = matchJson["losses"].intValue
+                    ties = matchJson["ties"].intValue
+                    matchNotes = matchJson["matchNotes"].stringValue
+                }
+                
                 //NSLog("Loaded %d %@", teamNumber, teamName)
                 
             } else {
@@ -120,6 +131,9 @@ class Team: NSObject {
         //File.remove(filePath)
         let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamNotes": teamNotes])
         File.write(filePath, content: json.description, encoding: NSASCIIStringEncoding)
+        
+        let matchJson = JSON(["wins": wins, "losses": losses, "ties": ties, "matchNotes": matchNotes])
+        File.write(matchFilePath, content: matchJson.description, encoding: NSASCIIStringEncoding)
         
     }
     
