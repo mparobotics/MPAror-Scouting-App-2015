@@ -27,7 +27,7 @@ class AllianceMember: UIViewController {
         let autoString = "(Yellow Bins, Zone Change, Vision Track)"
         let totesString = "(Upright, Inverted, Flip)"
         let litterString = "(Landfill, Container, Ground)"
-        notes.text = String(format: "Auto Height: %d %@\n\nTotes Height: %d %@\n\nLitter Height: %d %@\n\nContainer Height: %d\n\nNotes:\n%@\n\n", teamData.autoStack, autoString, teamData.totesStack, totesString, teamData.litterStack, litterString, teamData.containersStack, teamData.teamNotes, teamData.matchNotes)
+        notes.text = String(format: "Auto Height: %d %@\n\nTotes Height: %d %@\n\nLitter Height: %d %@\n\nContainer Height: %d\n\nNotes:\n%@\n\n%@", teamData.autoStack, autoString, teamData.totesStack, totesString, teamData.litterStack, litterString, teamData.containersStack, teamData.teamNotes, teamData.matchNotes)
     }
 
     override func didReceiveMemoryWarning() {
