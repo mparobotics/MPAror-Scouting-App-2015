@@ -12,11 +12,15 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
     
     var teams = [Team]()
     var filteredTeams = [Team]()
+    
+    var matchNumber: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateMatchNumber:", name: "org.team3926.scouting.2015.M-Scout.UpdateMatchMember", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,6 +93,13 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
         return true
     }
     
+    func updateMatchNumber(notification: NSNotification) {
+        let userInfo:Dictionary<String,String!> = notification.userInfo as Dictionary<String,String!>
+        let messageString: NSString = userInfo["message"]!
+        
+        matchNumber = messageString.integerValue
+    }
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "teamLookupDetail" {
@@ -103,6 +114,14 @@ class TeamLookup: UITableViewController, UISearchBarDelegate, UISearchDisplayDel
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let controller = segue.destinationViewController as AllianceMember
                 controller.teamData = teams[indexPath.row]
+            }
+        }
+        
+        if segue.identifier == "matchMemberLookup" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let controller = segue.destinationViewController as MatchMember
+                controller.teamData = teams[indexPath.row]
+                controller.matchNumber = matchNumber
             }
         }
     }
