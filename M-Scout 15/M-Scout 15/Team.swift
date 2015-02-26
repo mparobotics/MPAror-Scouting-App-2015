@@ -73,7 +73,7 @@ class Team: NSObject {
                     robotImage = File.readImage(imagePath)!
                     robotImageSet = true
                 } else {
-                    NSLog("No image at %@", imagePath)
+                    //NSLog("No image at %@", imagePath)
                     robotImageSet = false
                 }
                 
@@ -107,16 +107,16 @@ class Team: NSObject {
                 
                 teamExists = true;
                 
-                NSLog("Loaded %d %@", teamNumber, teamName)
+                //NSLog("Loaded %d %@", teamNumber, teamName)
                 
             } else {
-                NSLog("Team %d not located. New object created.", teamNumber)
+                //NSLog("Team %d not located. New object created.", teamNumber)
             }
         }
     }
     
     func save() {
-        NSLog("Saving team %d...", teamNumber)
+        //NSLog("Saving team %d...", teamNumber)
         //File.remove(filePath)
         let json = JSON(["teamNumber": teamNumber, "teamName": teamName, "hasAuto": hasAuto, "hasTotes": hasTotes, "hasContainers": hasContainers, "hasLitter": hasLitter, "driveStyle": driveStyle, "autoStack": autoStack, "canYellowBins": canYellowBins, "canZoneChange": canZoneChange, "canVisionTrack": canVisionTrack, "totesStack": totesStack, "canUpright": canUpright, "canInverted": canInverted, "canFlip": canFlip, "litterStack": litterStack, "canLandfill": canLandfill, "canContainer": canContainer, "canGround": canGround, "containersStack": containersStack, "teamRating": teamRating, "teamNotes": teamNotes])
         File.write(filePath, content: json.description, encoding: NSASCIIStringEncoding)

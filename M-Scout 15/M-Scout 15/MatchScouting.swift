@@ -1,5 +1,5 @@
 //
-//  AllianceVisualizer.swift
+//  MatchScouting.swift
 //  M-Scout 15
 //
 //  Created by Brendan Boyle on 2/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllianceVisualizer: UIViewController {
+class MatchScouting: UIViewController, UITextFieldDelegate {
     @IBOutlet var matchNumber: UITextField!
 
     override func viewDidLoad() {
@@ -19,10 +19,13 @@ class AllianceVisualizer: UIViewController {
         
         
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func tapOutisde(sender: AnyObject) {
+        matchNumber.resignFirstResponder()
     }
     
     @IBAction func matchNumberChanged(sender: AnyObject) {
@@ -30,6 +33,11 @@ class AllianceVisualizer: UIViewController {
         if (fieldText.integerValue > 0) {
             NSNotificationCenter.defaultCenter().postNotificationName("org.team3926.scouting.2015.M-Scout.UpdateMatchMember", object: self, userInfo:["message":matchNumber.text])
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        matchNumber.resignFirstResponder()
+        return true
     }
 
     /*

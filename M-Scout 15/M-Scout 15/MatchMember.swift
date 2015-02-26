@@ -14,6 +14,7 @@ class MatchMember: UIViewController {
     @IBOutlet var matchContribution: UISegmentedControl!
     @IBOutlet var matchRating: UISlider!
     @IBOutlet var saveButton: UIButton!
+    @IBOutlet var matchRatingLabel: UILabel!
     
     var teamData = Team()
     var matchNumber:Int = 0
@@ -50,6 +51,10 @@ class MatchMember: UIViewController {
         updateSaveButton()
     }
     
+    @IBAction func ratingChanged(sender: AnyObject) {
+        matchRatingLabel.text = String(format: "%d", Int(matchRating.value))
+    }
+    
     func updateSaveButton() {
         if (matchNumber > 0) {
             saveButton.enabled = true
@@ -75,6 +80,10 @@ class MatchMember: UIViewController {
     }
     
 
+    @IBAction func saveTeam(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     /*
     // MARK: - Navigation
 

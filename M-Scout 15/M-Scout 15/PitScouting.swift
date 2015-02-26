@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet var teamNumber: UITextField!
     @IBOutlet var teamName: UITextField!
@@ -377,6 +377,12 @@ class PitScouting: UIViewController, UINavigationControllerDelegate, UIImagePick
         
         File.writeImage("\(teamNumber.text).png", content: image)
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        teamNumber.resignFirstResponder()
+        teamName.resignFirstResponder()
+        return true
     }
     
     /*
